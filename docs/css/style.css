@@ -20,7 +20,6 @@
   bottom: 0; /*Using position absolute, forces footer stay at the bottom of the page*/
   width: 100vw; /*set's the footer width to 100% of the page's width*/
   line-height: 60px; /* Vertically center the text there */
-  align-items: center;
 }
 
 
@@ -54,6 +53,7 @@ body{
 footer{
     height: 20vh;
     width: 100vw;
+    align-content: center;
 }
 
 /*Will use this to target specific states of the dic body as we will need them adjusted accordingly for different things
