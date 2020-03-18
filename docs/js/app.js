@@ -4,11 +4,12 @@
         'welcomeState', //ADDED for welcome page state
         'throttleinstructionState', // ADDED for throttle instruction state
         'trackSelectionState', //ADDED for track selection state
-        'throttlecontrolState' // ADDED for throttle control state
+        'throttlecontrolState', // ADDED for throttle control state
+        'angular-uuid' // ADDED for the UUID generation
     ])
 
     .config(function ($urlRouterProvider) {
-        $urlRouterProvider.otherwise('throttle_instructions')
+        $urlRouterProvider.otherwise('welcome_page')
     })
 
     .run(function ($state, $rootScope) {
@@ -17,8 +18,8 @@
 
             event.preventDefault();
 
-            $state.get('throttle_instructions').error = { code: 123, descriptions: 'Exception stack trace'}
-            return $state.go('throttle_instructions');
+            $state.get('welcome_page').error = { code: 123, descriptions: 'Exception stack trace'}
+            return $state.go('welcome_page');
         })
     })
 })();
