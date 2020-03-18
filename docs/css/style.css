@@ -1,0 +1,144 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+@font-face{
+    font-family: "Neuropolitical";
+    src: url(neuropolitical/neuropolitical.ttf);
+}
+
+@font-face{
+    font-family: "Monoglyceride";
+    src: url(monoglyceride/monogrg.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.footer {
+  position: static;
+  bottom: 0; /*Using position absolute, forces footer stay at the bottom of the page */
+  width: 100vw; /*set's the footer width to 100% of the page's width*/
+  line-height: 60px; /* Vertically center the text there */
+}
+
+
+header{
+    height: 40vh;
+    margin: 0;
+    padding: 0;
+}
+
+div[name="welcome_page_header"]{
+    height: 40vh;
+}
+
+ui-view{
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+}
+
+body{
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background-color: rgba(51, 0, 51, 0.75) !important;
+    height: 100vh !important;
+}
+
+footer{
+    height: 20vh;
+    width: 100vw;
+}
+
+/*Will use this to target specific states of the dic body as we will need them adjusted accordingly for different things
+* Can find this element affecting style on the: welcome.page.html
+*/
+div[name="welcome_page_body"] {
+  height: 30vh;
+}
+
+
+/*Can use this to make sure that the text is doing the correct thing
+* Can find this element affecting style on the: welcome.page.html
+*/
+h1[name="header_text_h1"]{
+    margin: 0 !important;
+    height: 40vh;
+    font-family: "Neuropolitical", Arial, sans-serif;
+    text-align: center;
+    padding-top: 30vh;
+    color: #ffffff;
+    font-size: 4em;
+}
+
+/*Can use this to make sure that the text is doing the correct thing
+* Can find this element affected by this style on the: welcome.page.html
+*/
+h2[name="header_text_h2"]{
+    margin: 0 !important;
+    font-family: "Neuropolitical", Arial, sans-serif;
+    text-align: center;
+    padding: 5%;
+    color: #ffffff;
+    font-size: 3.7em;
+}
+
+form[name="setup_form"] {
+  height: 20vh;
+  text-align: center;
+  color: #ffffff;
+  outline: none;
+}
+
+
+/*This is a style that is used to target the submission form that we have for the track selection
+* Can find this element affected by this style on: welcome.page.html
+*/
+button{
+    height: 5vh;
+    width: 50vw;
+    background: #000000;
+    border-color: #ffffff;
+    border-width: 2px;
+    border-radius: 10px;
+    align-content: center;
+    color: #ffffff;
+    font-family: "Monoglyceride", Arial, sans-serif;
+    font-size: 3em;
+    font-weight: bold;
+    outline: none;
+}
+
+/* The next three areas are for the slider that we are going to be controlling via MQTT in our application
+* Can find the elements affected by this style on: carControlView.html
+*/
+input[type="range"]{ 
+    margin: auto !important;
+    -webkit-appearance: slider-vertical !important;
+    position: relative !important;
+    overflow: hidden !important;
+    height: 50vh !important;
+    width: 5vh !important;
+    cursor: pointer !important;
+    border-radius: 50px !important;
+}
+
+::-webkit-slider-runnable-track {
+    height: 80% !important;
+    width: 10vh !important;
+    background: #ddd !important;
+}
+
+::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    width: 10vh !important;
+    height: 60px !important;
+    background: #ddd !important;
+    box-shadow: 0 68vh 0 68vh dodgerblue !important;
+    border: 2px solid #999 !important;
+}
