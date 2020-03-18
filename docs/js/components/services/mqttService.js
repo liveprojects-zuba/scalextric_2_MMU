@@ -143,7 +143,7 @@ function mqttService($timeout, $state) {
             alert("Could not reconnect to MQTT, going back to load screen!");
         }
         retryOrNot = true;
-        $state.go('splashscreen');
+        $state.go('welcome_page');
     }
 
     function handleRetries() {
@@ -165,8 +165,6 @@ function mqttService($timeout, $state) {
             );
         }else{
             handleRetryError();
-        }
-        
+        }      
     }
-
 }

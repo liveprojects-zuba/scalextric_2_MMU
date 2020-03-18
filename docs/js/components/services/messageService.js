@@ -22,7 +22,7 @@ function messageService(mqttService, brokerDetails, $timeout) {
     self.resubscribe = resubscribe;
     
     function initialize(){
-        console.log("Message service ini");
+        console.log("The message service has been initalised");
     }
 
     function onNewMessage(message){
@@ -76,10 +76,4 @@ function messageService(mqttService, brokerDetails, $timeout) {
     function disconnect(retryOrNot){
         mqttService.disconnect(retryOrNot);
     }
-
-
-
-    
-
-
 }

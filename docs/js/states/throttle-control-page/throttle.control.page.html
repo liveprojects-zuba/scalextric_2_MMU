@@ -1,0 +1,12 @@
+<ui-view>
+    <span ng-bind="vm.throttle" ng-show="!vm.throttleError"></span>
+    <span ng-show="vm.throttleError">Error</span>
+    <div id="slider">
+        <input type="range" id="throttle" min="0" max="100" value="0" orient="vertical" class="throttle"
+            ng-model="vm.throttle">
+    </div>
+
+    <div id="quitDiv">
+        <button id="quit" type="submit" class="btn btn-primary" ng-click="vm.stop()">Quit</button>
+    </div>
+</ui-view>

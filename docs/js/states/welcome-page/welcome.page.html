@@ -1,13 +1,15 @@
-<ui-view>
+<uiview>
     <header>
-        <h1 class="welcome-heading">Welcome To Scalexric!!!</h1>
+        <div name="welcome-heading">
+            <h1 class="text-center" name="header_text_h1">Welcome To Scalexric!!!</h1>
+        </div> 
     </header>
 
-    <div>
-        <h2 class="welcome-text">We hope you enjoy the application developed by the student group at MMU!</h2>
+    <div name="welcome_page_body">
+        <h2 class="text" name="header_text_h2">We hope you enjoy the application developed by the student group at MMU!</h2>
     </div>
 
     <footer>
-        <button type="button" ng-click="vm.getStarted">LET'S GO!</button>
+        <button type="button" ng-click="vm.makeConnection()">LET'S GO!</button>
     </footer>
-</ui-view>
+</uiview>

@@ -1,0 +1,16 @@
+<ui-view>
+    <header>
+        <h1 class="track-selection-heading">Track Selection</h1>
+    </header>
+
+    <div>
+        <h2 class="track-selection-text">Please pick a track below:</h2>
+    </div>
+
+    <div id="channelSelection">
+        <form id="channelForm" name="setup_form" ng-submit="vm.go(setup_form.$valid)">
+            Channel <select ng-model="vm.channel" ng-options="c for c in vm.channels" required></select>
+            <button id="trackSelectionButton" type="submit" ng-disabled="setup_form.$invalid">LET'S RACE!</button>
+        </form>
+    </div>
+</ui-view>

@@ -4,8 +4,7 @@ aloneService.$inject = [
     'brokerDetails',
     'messageService',
     '$state',
-    '$timeout'
-    
+    '$timeout'   
 ];
 
 
@@ -24,25 +23,13 @@ function aloneService(brokerDetails, messageService, $state, $timeout) {
     self.listenForOthers = listenForOthers;
     self.checkResponse = checkResponse;
     self.checkOtherTrack = checkOtherTrack;
-    self.setWeaponsListener = setWeaponsListener;
-    self.checkIfPlayerHasLeft = checkIfPlayerHasLeft;
-    self.setDisableListener = setDisableListener;
-    var weaponsListener;
-    var disableListener;
-    
+    self.checkIfPlayerHasLeft = checkIfPlayerHasLeft;    
     
     function initialize(hash){
-        console.log("Alone service ini");
+        console.log("The alone service has started");
         uuid = hash;
     }
 
-    function setWeaponsListener(fnListener) {
-        weaponsListener = fnListener;
-    }
-
-    function setDisableListener(fnListener) {
-        disableListener = fnListener;
-    }
 
     function listenForOthers(){
         messageService.subscribe(self.currentTopic, serviceName, function(message){
@@ -76,12 +63,12 @@ function aloneService(brokerDetails, messageService, $state, $timeout) {
             function () {
                 if(!response){
                     listenForOthers();
-                    $state.transitionTo('car_control',
+                    $state.transitionTo('throttle_control_page',
                     {
                     channel: channel,
                     });
                 }else{
-                    alert("Channel Occupied! Try Another!");
+                    alert("Channel Occupied! Try Another channel please!");
                 }
             }, DELAY_MS);
         
@@ -115,7 +102,6 @@ function aloneService(brokerDetails, messageService, $state, $timeout) {
         messageService.publish(self.otherTopic, JSON.stringify(uuid));
     }
 
-
     
     function checkIfPlayerHasLeft(){
         if(currentChannel == 1){
@@ -136,19 +122,6 @@ function aloneService(brokerDetails, messageService, $state, $timeout) {
                 }
             }
         });
-        messageService.publish(self.otherTopic, JSON.stringify(uuid));
-        $timeout(
-            function () {
-                if(!response){
-                    if (disableListener) {
-                        disableListener();
-                    }
-                }else{
-                    if (weaponsListener) {
-                        weaponsListener();
-                    }
-                }
-            }, DELAY_MS);
         
     }
     

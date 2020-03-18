@@ -11,7 +11,7 @@
                 .state('throttle_control_page', {
                     cache: false,
                     url: '/throttle_control_page',
-                    templateUrl: 'js/states/throttle-control/throttle.control.page.html',
+                    templateUrl: 'js/states/throttle-control-page/throttle.control.page.html',
                     controller: 'throttleControl as vm'
                 })
         })
